@@ -15,10 +15,20 @@ void main()
     int arr[] = {5,11,22,33};
     int *p = &arr[1];
 
+    
     printf("%d \n",*p++); // (aumenta lo que hay en el puntero) (*p)++ != *p++ (aumenta puntero)
     printf("%d \n",(*p)++); 
     printf("%d \n",*p);
 
+    *(p+1) = 3;
+
+    --p[-1];
+    printf("%d \n",*(p-1));
+
+    int var = -11.7;
+    // double aux = (double) (var/3);
+
+    printf("%010f \n", (double) (var--/3));
     // char otro[];
 }
 
