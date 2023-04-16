@@ -27,5 +27,8 @@ int main(void)
     {
         printf("Estas fresco mi pana\n");
     }
+    //pedro le comenta cosas a teo :) 
+    //a mi no me anda copilot 
+    //F en el chat
     return 0;
 }
