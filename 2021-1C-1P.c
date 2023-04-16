@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <math.h>
 
 double prodEscalar(double *v1,double *v2, int largo);
 
@@ -30,6 +31,8 @@ void main()
 
     printf("%010f \n", (double) (var--/3));
     // char otro[];
+
+    
 }
 
 double prodEscalar(double *v1,double *v2, int largo)
@@ -40,4 +43,6 @@ double prodEscalar(double *v1,double *v2, int largo)
         out += v1[i]*v2[i];
     }
     return out;
+
 }
+
