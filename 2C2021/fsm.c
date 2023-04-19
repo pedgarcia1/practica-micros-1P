@@ -54,4 +54,3 @@ char runFSM(char in){
     }
     return (estado);
 }
-
