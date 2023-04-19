@@ -31,5 +31,7 @@ int main(void)
     //while (getchar() != 'q');
     free(puntero);
     //hola teo
+    // otro comentario de pedro
+    
     return 0;
 }
