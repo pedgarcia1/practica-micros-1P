@@ -30,6 +30,6 @@ int main(void)
     // wait for Q to be pressed
     //while (getchar() != 'q');
     free(puntero);
-
+    //hola teo
     return 0;
 }
