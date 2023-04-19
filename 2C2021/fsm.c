@@ -8,31 +8,34 @@ char estado;
 int main (void){
     estado = S1;
     char in;
-    while (1){
-        printf("Enter a number (q to quit): \n");
-        scanf("%c", &in);
-        printf("%c\n", in);
-        printf("Estado: %d \n", runFSM(in));
-        /* if (runFSM(in)){
-            printf("S2\n");
+    while(1){
+        printf("Ingrese el in (1 o 2) o q para salir: \n");
+        in = getchar();
+        
+        while (in != '0' && in != '1' && in != 'q'){
+            in = getchar();
         }
-        else {
-            printf("Not S2\n");
-        } */
+        if(in == 'q'){
+            break;
+        }
+        if(in == '0' || in == '1'){
+            printf("Estado S%d\n\n", runFSM(in) + 1);
+        }
     }
     return 0;
+
 }
 
 char runFSM(char in){
     switch (estado)
     {
     case S1:
-        if(in){
+        if(in == '1'){
             estado = S2;
         }
         break;
     case S2:
-        if(in){
+        if(in == '1'){
             estado = S3;
         }
         else {
@@ -44,9 +47,10 @@ char runFSM(char in){
         if(in == '0'){
             estado = S1;
         }
+        else if(in == '1'){
+            estado = S3;
+        }
         break;
-    
-
     }
     return (estado);
 }
