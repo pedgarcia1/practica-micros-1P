@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdint.h>
 
-
 void print_hex_word(uint16_t word);
 void dec_to_hex(uint16_t a, char *hex);
 
