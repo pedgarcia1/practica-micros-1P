@@ -1,37 +1,37 @@
 #include<stdio.h>
 #include<stdint.h>
 
-void print_hex_word(uint16_t word);
-void dec_to_hex(uint16_t a, char *hex);
+void print_hex_word(uint32_t word);
+void dec_to_hex(uint32_t a, char *hex);
 
 void main()
 {
-    uint16_t w = 0xAC24;
+    uint32_t w = 0xAB24FF12;
 
     print_hex_word(w);
 }
 
-void print_hex_word(uint16_t word)
+void print_hex_word(uint32_t word)
 {
 
-    int numChar = sizeof(uint16_t);
-    char hex[2*2+1];
+    int numChar = sizeof(uint32_t);
+    char hex[2*numChar+1];
 
     dec_to_hex(word,hex);
 
     int i = 0;
     while (*(hex+i) != '\0')
     {
-        putchar(*(hex+(numChar-i+1)));
+        putchar(*(hex+(2*numChar-1-i)));
         i++;
     }
     
 }
 
-void dec_to_hex(uint16_t word, char *hex)
+void dec_to_hex(uint32_t word, char *hex)
 {
     int j = 0;
-    int r, q;
+    uint32_t r, q;
     
     q = word;
     while (q != 0)
