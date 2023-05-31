@@ -37,7 +37,7 @@
 /** STATIC VARIABLES AND CONST VARIABLES WITH FILE LEVEL SCOPE
 // +ej: static int temperaturas_actuales[4];+ */
 
-volatile uint8_t button_now, button_pressed_flank, button_before;
+volatile uint8_t button_now, button_pressed_flank, button_before, button_still_pressed;
 
 /* GLOBAL FUNCTION DEFINITIONS */
 
@@ -53,6 +53,15 @@ uint8_t buttonGetStatus(void){
 
 }
 
+uint8_t buttonStillPressed(void){
+    button_now = gpioRead(BUTTON_PIN);
+    if((button_now == button_before) && (button_now == LOW)) //chequea si se mantiene apretado el botton y si el botton esta apretado 
+    {
+        button_still_pressed = 1;
+    }else{
+        button_still_pressed = 0;
+    }
+}
 
 /* LOCAL FUNCTION DEFINITIONS */
 
