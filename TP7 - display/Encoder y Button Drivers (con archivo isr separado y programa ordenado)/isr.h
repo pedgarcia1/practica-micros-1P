@@ -1,40 +1,53 @@
-/**
- * @file     isr.h
- * @brief    header file for isr. Extern flags declaration.
- * @author   Teo Nicoletti
- */
+/***************************************************************************//**
+  @file     isr.h
+  @brief    Interrupt driver
+  @author   Grupo 5
+ ******************************************************************************/
 
 #ifndef _ISR_H_
 #define _ISR_H_
 
-/* INCLUDE HEADER FILES */
+/*******************************************************************************
+ * INCLUDE HEADER FILES
+ ******************************************************************************/
 
 #include "common.h"
 
-/* CONSTANT AND MACRO DEFINITIONS USING #DEFINE */
+/*******************************************************************************
+ * CONSTANT AND MACRO DEFINITIONS USING #DEFINE
+ ******************************************************************************/
 
 
 
-/* ENUMERATIONS AND STRUCTURES AND TYPEDEFS */
+/*******************************************************************************
+ * ENUMERATIONS AND STRUCTURES AND TYPEDEFS
+ ******************************************************************************/
 
 
 
-/* VARIABLES WITH GLOBAL SCOPE 
- * +ej: unsigned int anio_actual;*/
+
+/*******************************************************************************
+ * VARIABLE PROTOTYPES WITH GLOBAL SCOPE
+ ******************************************************************************/
+
+// +ej: extern unsigned int anio_actual;+
 
 
-extern volatile uint8_t buttonPressedFlag, CWTurnFlag, CCWTurnFlag;
-
-/* FUNCTION PROTOTYPES WITH GLOBAL SCOPE */
-
-void isrInit(void);
+/*******************************************************************************
+ * FUNCTION PROTOTYPES WITH GLOBAL SCOPE
+ ******************************************************************************/
 
 /**
- * @brief TODO: completar descripcion
- * @param param1 Descripcion parametro 1
- * @param param2 Descripcion parametro 2
- * @return Descripcion valor que devuelve
+ * @brief Sends function to be executed in the interrupt service routine
+ * @param function Pointer to function to be executed 
+ * @param period period of the function execution in times of interruptions. (ej: 1 = every interruption, 2 = every 2 interruptions, etc)
 */
+void send_to_isr(void (*function)(void), unsigned int period);
+
 // +ej: char lcd_goto (int fil, int col);+
+
+
+/*******************************************************************************
+ ******************************************************************************/
 
 #endif // _ISR_H_
