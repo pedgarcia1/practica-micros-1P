@@ -55,6 +55,21 @@ void printDigit(int val,int pos){
 
 }
 
+void displayOpen(void)
+{
+  #define DISPLAY_CYCLES 100000;
+  int openArray[] = {0x3f,0x73,0x7b,0x37}; //O P E N para la pantalla
+  while (1)
+  {
+    for (char i = 0; i < 4*DISPLAY_CYCLES; i++)
+    {
+      printDigit(openArray[i],i);
+    }
+    __delay_cycles(100000);
+  }
+  
+}
+
 
 
 /*******************************************************************************
