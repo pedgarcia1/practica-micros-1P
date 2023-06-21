@@ -1,4 +1,4 @@
-#include <msp430.h>
+#include "msp430g2553.h"
 
 // MSP430G2553 Board definitions
 #define B0 0

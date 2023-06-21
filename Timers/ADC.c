@@ -36,7 +36,7 @@ int main(void)
 	while(1)
 	{
 	    adcval=ADC10MEM; // Read adc value
-	    ADC10CTL0 |= ENC + ADC10SC; // Enable converter & Start of conversión  (insert a breakpoint here and watch variable adcval)
+	    ADC10CTL0 |= ENC + ADC10SC; // Enable converter & Start of conversion  (insert a breakpoint here and watch variable adcval)
 	    for(i=20000; i>0; i--);          // some delay
 
 	}
@@ -52,7 +52,7 @@ int main(void)
 void adcinit(void)
 {
     /* Select Reference */
-    ADC10CTL0 = SREF_0 + ADC10SHT_2 + ADC10ON;
+    ADC10CTL0 = SREF_0 + ADC10SHT_2 + ADC10ON; // Vref y Vground + sample-and-hold time + adc ON
   //  ADC10CTL0 = SREF_1 + ADC10SHT_2 + ADC10ON + REF2_5V + REFON;
 
     /*Select input channel P1.7*/
