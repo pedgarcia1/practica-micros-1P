@@ -92,7 +92,7 @@ int main(void)
 {
     WDTCTL = WDTPW | WDTHOLD;   // stop watchdog timer
 
-    /* Use Calibration values for 1MHz Clock DCO*/
+    /* Use Calibration values for 8MHz Clock DCO*/
     DCOCTL = 0;
     BCSCTL1 = CALBC1_8MHZ;
     DCOCTL = CALDCO_8MHZ;
@@ -110,7 +110,7 @@ int main(void)
     TA0CCR0=1000; 
     TA0CCR1=300; // DC 30% = 300/1000                     
 
-    TA0CTL=TASSEL__SMCLK  | TIMER_UP | ID__8 ;
+    TA0CTL=TASSEL__SMCLK  | TIMER_UP | ID__8 ; // Divider 8 8Mhz -> 1Mhz
 
     _BIS_SR(GIE); // Enable General interrupts  
 
